@@ -1,6 +1,6 @@
 # AI Image Generator — 4 Apps (Template)
 
-This bundle contains four parallel apps (folders) for image generation. The `gpt_image_1/` app is your uploaded code; the other three are clones with TODO banners pointing to places you should change for each provider.
+This bundle contains four parallel apps (folders) for image generation. 
 
 ## Apps
 - **gpt_image_1/** — OpenAI GPT-4o image API: `gpt-image-1`
