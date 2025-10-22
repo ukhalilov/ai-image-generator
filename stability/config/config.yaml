@@ -1,0 +1,26 @@
+provider: stability
+model: stable-image-ultra              # human-readable tag for your manifest
+
+stability:
+  api_base: "https://api.stability.ai"
+  # Official v2beta Ultra endpoint:
+  endpoint: "/v2beta/stable-image/generate/ultra"  # documented path
+  accept: "image/*"                 # ask the API for raw PNG bytes
+  aspect_ratio: "1:1"                 # matches your baseline
+  output_format: "png"                # png | jpeg
+  negative_prompt: ""                 # keep empty for now
+
+output_root: "E:\\research\\stability"
+
+# We keep the label set [11,23,37,53,71] in filenames but convert to a TRUE seed.
+# Range for Ultra is 0..4,294,967,295 (Bedrock doc). We'll map percent to (MAX-1).
+seed_labels: [11, 23, 37, 53, 71]
+seed_max: 4294967295
+
+retry:
+  max_attempts: 5
+  initial_delay_s: 2
+  max_delay_s: 30
+
+timeout_s: 300
+concurrency: 4

@@ -1,0 +1,33 @@
+# Active provider + model label (metadata/manifest)
+provider: openai
+model: gpt-image-1
+
+# ------------------ OpenAI (ChatGPT Images) ------------------
+openai:
+  # Use one of the supported sizes; 1024x1024 is recommended
+  size: "1024x1024"
+  quality: "high"            # low | medium | high
+  # Optional identity pinning; helpful if you belong to multiple orgs/projects
+  organization: "org-fRrbptej8TpNS6oitmU386gF"           # e.g., "org_abc123..."
+  project: "proj_oYbCgHhbcX3YYHHkgJnkMrfR"                # e.g., "proj_abc123..." or project name
+
+# ------------------ Output ------------------
+output_root: "E:\\research\\chatgpt"
+
+# ------------------ Replications (used as repeat indices; NOT sent to OpenAI Images API)
+# We iterate these to get 5 independent samples per prompt for diversity/stats.
+seeds: [11, 23, 37, 53, 71]
+
+image_format: "png"
+
+# ------------------ Reliability / retries ------------------
+retry:
+  max_attempts: 5
+  initial_delay_s: 2
+  max_delay_s: 30
+
+# Network/SDK timeout (seconds)
+timeout_s: 300
+
+# (Optional) parity setting; not used for parallelism in this script
+concurrency: 4

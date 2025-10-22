@@ -1,0 +1,7 @@
+openai>=1.40.0
+python-dotenv>=1.0.1
+pandas>=2.2.2
+tqdm>=4.66.4
+tenacity>=9.0.0
+Pillow>=10.4.0
+pyyaml>=6.0.1

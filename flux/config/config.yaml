@@ -1,0 +1,24 @@
+provider: bfl
+model: flux-kontext-max
+
+bfl:
+  api_base: "https://api.bfl.ai"         # or regional: https://api.eu.bfl.ai / https://api.us.bfl.ai
+  endpoint: "/v1/flux-kontext-max"
+  aspect_ratio: "1:1"                    # supported range documented; 1:1 matches your baseline
+  output_format: "png"                   # "png" | "jpeg"
+  prompt_upsampling: false               # keep off for fair prompt adherence
+  safety_tolerance: 2                    # 0 (strict) .. 6 (most permissive)
+
+output_root: "E:\\research\\flux"
+
+# Percent-based seed labels; convert to real integers.
+seed_labels: [11, 23, 37, 53, 71]
+seed_max: 2147483647                    # default cap (can adjust if BFL publishes a different range)
+
+retry:
+  max_attempts: 5
+  initial_delay_s: 2
+  max_delay_s: 30
+
+timeout_s: 600                           # includes polling window
+concurrency: 1
